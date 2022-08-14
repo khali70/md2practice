@@ -12,10 +12,10 @@ interface GithubPracticesProps {
 
 const GithubPractices: React.FC<GithubPracticesProps> = ({ githubLink }) => {
   const link = convertGithubLink(githubLink);
-  const getPractices = () => axios.get(link)
+  const getPractices = () => axios.get(link);// get interview questions as markdown
     .then((response) => {
-      const lexer = marked.lexer(response.data);
-      const practices = recorrectQuestionIndex(parsePractices(lexer));
+      const lexer = marked.lexer(response.data); // convert question as markdown lexer
+      const practices = recorrectQuestionIndex(parsePractices(lexer)); // get array of questions from markdown
       return withId(practices);
     });
 
@@ -24,9 +24,10 @@ const GithubPractices: React.FC<GithubPracticesProps> = ({ githubLink }) => {
     handleSelectionChange,
     setPractices,
     resetStorage,
-  }] = usePracticesWithLocalStorage(link, {});
+  }] = usePracticesWithLocalStorage(link, {}); // custom hook to load parctise from local storage
 
   useEffect(() => {
+    // chock of practs not present in local storage
     if (isEmptyPractices(practices)) {
       getPractices().then((data) => {
         setPractices(data);
