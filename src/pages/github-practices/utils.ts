@@ -1,5 +1,5 @@
 import { PracticeParams } from '../../components/practice/practice';
-
+// convert github link to qize readme
 export const convertGithubLink = (githubLink: string) => {
   const url = new URL(githubLink);
   const tokens = url.pathname.split('/');
