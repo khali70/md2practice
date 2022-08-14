@@ -38,6 +38,12 @@ const LinkedInPracticesMenuPage: React.FC = () => {
   const [infos, setInfos] = useState<LinkedInPracticeInfo[]>([]);
   const [filteredInfos, setFilteredInfos] = useState<LinkedInPracticeInfo[]>([]);
 
+  // filer practce by search value 
+  /**
+   * 
+   * @emaple if i search for js 
+   * the filter will filter the practes that contain react which is react and react-native
+   */
   const handleFilterOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const filterValue = e.target.value.toLowerCase();
     const filtered = infos.filter((item) => item.title.toLowerCase().includes(filterValue));
