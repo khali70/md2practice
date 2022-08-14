@@ -4,6 +4,7 @@ import ReactGA from 'react-ga4';
 import Logo from '../assets/md2practice-logo.svg';
 import { fetchLinkedInPracticeInfos, LinkedInPracticeInfo } from '../api/linkedin-practices';
 
+// practice card with link to parctice page
 const LinkedInCard: React.FC<LinkedInPracticeInfo> = ({ title, url }) => {
   const handleGA = () => {
     ReactGA.event(
