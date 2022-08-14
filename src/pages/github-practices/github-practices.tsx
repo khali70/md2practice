@@ -12,7 +12,7 @@ interface GithubPracticesProps {
 
 const GithubPractices: React.FC<GithubPracticesProps> = ({ githubLink }) => {
   const link = convertGithubLink(githubLink);
-  const getPractices = () => axios.get(link);// get interview questions as markdown
+  const getPractices = () => axios.get(link)// get interview questions as markdown
     .then((response) => {
       const lexer = marked.lexer(response.data); // convert question as markdown lexer
       const practices = recorrectQuestionIndex(parsePractices(lexer)); // get array of questions from markdown
