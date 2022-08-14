@@ -8,7 +8,7 @@ export interface LinkedInPracticeInfo {
 
 type Table = marked.Tokens.Table
 type Link = marked.Tokens.Link
-
+// from readme get practice info
 export const getLinkedInPracticeInfos = (
   data: string,
   baseURL?: string,
@@ -37,7 +37,7 @@ export const getLinkedInPracticeInfos = (
 
   return infos;
 };
-
+// fetch info from mark down of the 
 export const fetchLinkedInPracticeInfos = async (): Promise<LinkedInPracticeInfo[]> => {
   // const BASE_URL = 'https://raw.githubusercontent.com/Ebazhanov/linkedin-skill-assessments-quizzes/master/';
   const MENU = 'https://raw.githubusercontent.com/Ebazhanov/linkedin-skill-assessments-quizzes/master/README.md';
